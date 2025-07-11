@@ -1,9 +1,13 @@
 import UserProfile from './components/UserProfile.jsx';
+import Sidebar from './components/Sidebar.jsx';
 
 export default function App() {
   return (
     <div>
-      <UserProfile />
+      <Sidebar />
+      <div style={{ marginLeft: '60px' }}>
+        <UserProfile />
+      </div>
     </div>
   );
 }
