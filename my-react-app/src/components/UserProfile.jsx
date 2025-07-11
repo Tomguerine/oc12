@@ -30,8 +30,7 @@ export default function UserProfile() {
 
   return (
     <div>
-      <Header />
-      <h2>{mainData?.userInfos?.firstName}</h2>
+      <Header firstName={mainData?.userInfos?.firstName} />
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         <div style={{ flex: '1 1 60%', minWidth: 300 }}>
           <ActivityChart data={activity} />
