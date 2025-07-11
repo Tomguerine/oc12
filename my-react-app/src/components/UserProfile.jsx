@@ -4,7 +4,7 @@ import ActivityChart from './ActivityChart.jsx';
 import AverageSessionsChart from './AverageSessionsChart.jsx';
 import PerformanceRadarChart from './PerformanceRadarChart.jsx';
 import ScoreRadialChart from './ScoreRadialChart.jsx';
-import KeyDataCard from './KeyDataCard.jsx';
+import KeyDataCard, { KEY_INFO } from './KeyDataCard.jsx';
 import {
   getUserMainData,
   getUserActivity,
@@ -41,9 +41,18 @@ export default function UserProfile() {
         </div>
         <div style={{ flex: '1 1 30%', minWidth: 200 }}>
           {mainData &&
-            Object.entries(mainData.keyData || {}).map(([label, value]) => (
-              <KeyDataCard key={label} label={label} value={value} />
-            ))}
+            Object.entries(mainData.keyData || {}).map(([key, value]) => {
+              const info = KEY_INFO[key] || { label: key, unit: '', icon: '' };
+              return (
+                <KeyDataCard
+                  key={key}
+                  label={info.label}
+                  value={value}
+                  unit={info.unit}
+                  icon={info.icon}
+                />
+              );
+            })}
         </div>
       </div>
     </div>
