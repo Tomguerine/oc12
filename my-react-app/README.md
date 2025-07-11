@@ -11,6 +11,7 @@ npm install
 cd my-react-app && npm install
 ```
 
+
 ## Setting environment variables
 
 Create a `.env` file in `my-react-app` to configure API access:

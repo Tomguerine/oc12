@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:3000/user';
+// Base URL for API requests comes from the Vite environment variable
+const API_URL = import.meta.env.VITE_API_URL;
 
 export async function getUserMainData(id) {
   const res = await fetch(`${API_URL}/${id}`);
