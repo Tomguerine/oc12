@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Header from './Header.jsx';
 import ActivityChart from './ActivityChart.jsx';
 import AverageSessionsChart from './AverageSessionsChart.jsx';
@@ -12,8 +13,9 @@ import {
   getUserPerformance,
 } from '../services/userService.js';
 
-export default function UserProfile() {
-  const userId = 12;
+export default function UserProfile({ userId: propUserId }) {
+  const { id } = useParams();
+  const userId = propUserId ?? id;
   const [mainData, setMainData] = useState(null);
   const [activity, setActivity] = useState(null);
   const [average, setAverage] = useState(null);
@@ -21,6 +23,7 @@ export default function UserProfile() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (!userId) return;
     async function fetchData() {
       try {
         const [main, act, avg, perf] = await Promise.all([
@@ -38,7 +41,7 @@ export default function UserProfile() {
       }
     }
     fetchData();
-  }, []);
+  }, [userId]);
 
   const score = mainData?.todayScore ?? mainData?.score ?? 0;
 
