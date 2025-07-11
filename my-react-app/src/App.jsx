@@ -1,9 +1,11 @@
+import { Routes, Route, Navigate } from 'react-router-dom';
 import UserProfile from './components/UserProfile.jsx';
 
 export default function App() {
   return (
-    <div>
-      <UserProfile />
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigate to="/user/12" replace />} />
+      <Route path="/user/:id" element={<UserProfile />} />
+    </Routes>
   );
 }
