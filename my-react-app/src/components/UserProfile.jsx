@@ -18,15 +18,38 @@ export default function UserProfile() {
   const [activity, setActivity] = useState(null);
   const [average, setAverage] = useState(null);
   const [performance, setPerformance] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    getUserMainData(userId).then(setMainData);
-    getUserActivity(userId).then(setActivity);
-    getUserAverageSessions(userId).then(setAverage);
-    getUserPerformance(userId).then(setPerformance);
+    async function fetchData() {
+      try {
+        const [main, act, avg, perf] = await Promise.all([
+          getUserMainData(userId),
+          getUserActivity(userId),
+          getUserAverageSessions(userId),
+          getUserPerformance(userId),
+        ]);
+        setMainData(main);
+        setActivity(act);
+        setAverage(avg);
+        setPerformance(perf);
+      } catch (err) {
+        setError(err.message);
+      }
+    }
+    fetchData();
   }, []);
 
   const score = mainData?.todayScore ?? mainData?.score ?? 0;
+
+  if (error) {
+    return (
+      <div>
+        <Header />
+        <p>Error: {error}</p>
+      </div>
+    );
+  }
 
   return (
     <div>
