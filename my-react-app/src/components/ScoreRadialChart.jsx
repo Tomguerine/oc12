@@ -6,25 +6,27 @@ export default function ScoreRadialChart({ value }) {
   const data = [{ name: 'score', value: percent, fill: '#ff0000' }];
 
   return (
-    <ResponsiveContainer width="100%" height={250}>
-      <RadialBarChart
-        innerRadius="80%"
-        outerRadius="100%"
-        data={data}
-        startAngle={90}
-        endAngle={450}
-      >
-        <RadialBar
-          minAngle={15}
-          background
-          clockWise
-          dataKey="value"
-        />
-      </RadialBarChart>
-      <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+    <div className="score-chart-container">
+      <ResponsiveContainer width="100%" height="100%">
+        <RadialBarChart
+          innerRadius="80%"
+          outerRadius="100%"
+          data={data}
+          startAngle={90}
+          endAngle={450}
+        >
+          <RadialBar
+            minAngle={15}
+            background
+            clockWise
+            dataKey="value"
+          />
+        </RadialBarChart>
+      </ResponsiveContainer>
+      <div className="score-chart-label">
         <strong>{percent}%</strong>
         <p>de votre objectif</p>
       </div>
-    </ResponsiveContainer>
+    </div>
   );
 }
