@@ -10,3 +10,13 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Environment variables
+
+Create a `.env` file in the project root to configure the API endpoint used by the application:
+
+```env
+VITE_API_URL=http://localhost:3000/user
+```
+
+`src/services/userService.js` reads this value using `import.meta.env.VITE_API_URL` when performing network requests.
