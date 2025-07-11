@@ -1,0 +1,13 @@
+.profile-grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: 2rem;
+}
+
+.main-content {
+  min-width: 300px;
+}
+
+.aside {
+  min-width: 200px;
+}
