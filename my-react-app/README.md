@@ -1,12 +1,36 @@
-# React + Vite
+# My React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React front‑end configured with [Vite](https://vitejs.dev/). It expects a backend API reachable by default at `http://localhost:3000`.
 
-Currently, two official plugins are available:
+## Installing dependencies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Install packages from the repository root and inside the app directory:
 
-## Expanding the ESLint configuration
+```bash
+npm install
+cd my-react-app && npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Setting environment variables
+
+Create a `.env` file in `my-react-app` to configure API access:
+
+```env
+VITE_API_URL=http://localhost:3000
+```
+
+## Running the development servers
+
+Start the backend API on `VITE_API_URL` (for example using `npm start` in your backend project) then run the Vite dev server:
+
+```bash
+cd my-react-app
+npm run dev
+```
+
+## Available scripts
+
+- `npm run dev` – launch the Vite development server with hot reloading.
+- `npm run build` – build the project for production in the `dist` folder.
+- `npm run preview` – serve the production build locally.
+- `npm run lint` – run ESLint on the source files.
