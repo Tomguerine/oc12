@@ -26,6 +26,9 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  padding-top: 91px; /* height of the fixed header */
+  padding-left: 100px; /* width of the fixed sidebar */
+  box-sizing: border-box;
 }
 
 h1 {
