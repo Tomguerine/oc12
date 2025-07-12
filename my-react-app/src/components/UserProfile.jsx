@@ -58,14 +58,22 @@ export default function UserProfile({ userId: propUserId }) {
   return (
     <div>
       <Header firstName={mainData?.userInfos?.firstName} />
-      <div className="profile-grid">
-        <div className="main-content">
-          <ActivityChart data={activity} />
-          <AverageSessionsChart data={average} />
-          <PerformanceRadarChart data={performance} />
-          <ScoreRadialChart value={score} />
+      <div className="dashboard-layout">
+        <div className="dashboard-main">
+          <div className="chart-container">
+            <ActivityChart data={activity} />
+          </div>
+          <div className="chart-container">
+            <AverageSessionsChart data={average} />
+          </div>
+          <div className="chart-container">
+            <PerformanceRadarChart data={performance} />
+          </div>
+          <div className="chart-container">
+            <ScoreRadialChart value={score} />
+          </div>
         </div>
-        <div className="aside">
+        <div className="dashboard-aside">
           {mainData &&
             Object.entries(mainData.keyData || {}).map(([key, value]) => {
               const info = KEY_INFO[key] || { label: key, unit: '', icon: '' };

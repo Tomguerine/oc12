@@ -11,3 +11,21 @@
 .aside {
   min-width: 200px;
 }
+
+/* Dashboard layout refinements */
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+
+.dashboard-main,
+.dashboard-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dashboard-main > * {
+  min-height: 250px;
+}
