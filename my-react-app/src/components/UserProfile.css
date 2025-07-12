@@ -1,14 +1,14 @@
-.profile-grid {
+.dashboard-layout {
   display: grid;
   grid-template-columns: 3fr 1fr;
   column-gap: 2rem;
 }
 
-.main-content {
+.dashboard-main {
   min-width: 300px;
 }
 
-.aside {
+.dashboard-aside {
   min-width: 200px;
 }
 
