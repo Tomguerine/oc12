@@ -5,16 +5,12 @@ export default function App() {
   return (
     <div>
       <Sidebar />
-      <div style={{ marginLeft: '60px' }}>
+      <div>
         <Routes>
           <Route path="/" element={<Navigate to="/user/12" replace />} />
           <Route path="/user/:id" element={<UserProfile />} />
         </Routes>
       </div>
-      <Routes>
-        <Route path="/" element={<Navigate to="/user/12" replace />} />
-        <Route path="/user/:id" element={<UserProfile />} />
-      </Routes>
     </div>
   );
 }
