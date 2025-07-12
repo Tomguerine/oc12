@@ -59,13 +59,22 @@ export default function UserProfile({ userId: propUserId }) {
     <div>
       <Header firstName={mainData?.userInfos?.firstName} />
       <div className="dashboard-layout">
-        <section className="dashboard-main">
-          <ActivityChart data={activity} />
-          <AverageSessionsChart data={average} />
-          <PerformanceRadarChart data={performance} />
-          <ScoreRadialChart value={score} />
-        </section>
-        <aside className="dashboard-aside">
+        <div className="dashboard-main">
+          <div className="chart-container">
+            <ActivityChart data={activity} />
+          </div>
+          <div className="chart-container">
+            <AverageSessionsChart data={average} />
+          </div>
+          <div className="chart-container">
+            <PerformanceRadarChart data={performance} />
+          </div>
+          <div className="chart-container">
+            <ScoreRadialChart value={score} />
+          </div>
+        </div>
+        <div className="dashboard-aside">
+
           {mainData &&
             ['calorieCount', 'proteinCount', 'carbohydrateCount', 'lipidCount'].map(
               (key) => {
