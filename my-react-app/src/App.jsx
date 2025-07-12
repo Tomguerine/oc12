@@ -7,12 +7,11 @@ export default function App() {
     <div>
       <Sidebar />
       <div style={{ marginLeft: '60px' }}>
-        <UserProfile />
+        <Routes>
+          <Route path="/" element={<Navigate to="/user/12" replace />} />
+          <Route path="/user/:id" element={<UserProfile />} />
+        </Routes>
       </div>
     </div>
-    <Routes>
-      <Route path="/" element={<Navigate to="/user/12" replace />} />
-      <Route path="/user/:id" element={<UserProfile />} />
-    </Routes>
   );
 }
