@@ -1,5 +1,5 @@
 .sidebar {
-  width: 60px;
+  width: 100px;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -10,6 +10,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 988;
 }
 
 .sidebar-link {
