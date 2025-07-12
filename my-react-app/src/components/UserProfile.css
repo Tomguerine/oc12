@@ -29,3 +29,7 @@
 .dashboard-main > * {
   min-height: 250px;
 }
+
+.welcome {
+  margin: 1rem 0;
+}

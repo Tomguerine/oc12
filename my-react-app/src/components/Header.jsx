@@ -1,6 +1,6 @@
 import './Header.css';
 
-export default function Header({ firstName }) {
+export default function Header() {
   return (
     <header className="header">
       <h1>SportSee</h1>
@@ -12,10 +12,6 @@ export default function Header({ firstName }) {
           <li>Communauté</li>
         </ul>
       </nav>
-      <div className="welcome">
-        <h2>Bonjour {firstName}</h2>
-        <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-      </div>
     </header>
   );
 }

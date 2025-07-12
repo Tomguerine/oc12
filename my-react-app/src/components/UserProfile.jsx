@@ -57,7 +57,11 @@ export default function UserProfile({ userId: propUserId }) {
 
   return (
     <div>
-      <Header firstName={mainData?.userInfos?.firstName} />
+      <Header />
+      <div className="welcome">
+        <h2>Bonjour {mainData?.userInfos?.firstName}</h2>
+        <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+      </div>
       <div className="dashboard-layout">
         <div className="dashboard-main">
           <div className="chart-container">
