@@ -73,8 +73,7 @@ export default function UserProfile({ userId: propUserId }) {
             <ScoreRadialChart value={score} />
           </div>
         </div>
-        <div className="dashboard-aside">
-
+        <aside className="dashboard-aside">
           {mainData &&
             ['calorieCount', 'proteinCount', 'carbohydrateCount', 'lipidCount'].map(
               (key) => {
@@ -90,7 +89,7 @@ export default function UserProfile({ userId: propUserId }) {
                     icon={info.icon}
                   />
                 );
-              },
+              }
             )}
         </aside>
       </div>
