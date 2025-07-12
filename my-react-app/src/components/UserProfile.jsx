@@ -58,28 +58,32 @@ export default function UserProfile({ userId: propUserId }) {
   return (
     <div>
       <Header firstName={mainData?.userInfos?.firstName} />
-      <div className="profile-grid">
-        <div className="main-content">
+      <div className="dashboard-layout">
+        <section className="dashboard-main">
           <ActivityChart data={activity} />
           <AverageSessionsChart data={average} />
           <PerformanceRadarChart data={performance} />
           <ScoreRadialChart value={score} />
-        </div>
-        <div className="aside">
+        </section>
+        <aside className="dashboard-aside">
           {mainData &&
-            Object.entries(mainData.keyData || {}).map(([key, value]) => {
-              const info = KEY_INFO[key] || { label: key, unit: '', icon: '' };
-              return (
-                <KeyDataCard
-                  key={key}
-                  label={info.label}
-                  value={value}
-                  unit={info.unit}
-                  icon={info.icon}
-                />
-              );
-            })}
-        </div>
+            ['calorieCount', 'proteinCount', 'carbohydrateCount', 'lipidCount'].map(
+              (key) => {
+                const value = mainData.keyData?.[key];
+                if (value == null) return null;
+                const info = KEY_INFO[key] || { label: key, unit: '', icon: '' };
+                return (
+                  <KeyDataCard
+                    key={key}
+                    label={info.label}
+                    value={value}
+                    unit={info.unit}
+                    icon={info.icon}
+                  />
+                );
+              },
+            )}
+        </aside>
       </div>
     </div>
   );
