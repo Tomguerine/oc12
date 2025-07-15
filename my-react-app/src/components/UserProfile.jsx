@@ -59,9 +59,10 @@ export default function UserProfile({ userId: propUserId }) {
     <div>
       <Header />
       <div className="welcome">
-        <h2>Bonjour {mainData?.userInfos?.firstName}</h2>
+        <h2>Bonjour <span>{mainData?.userInfos?.firstName}</span></h2>
         <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </div>
+
       <div className="dashboard-layout">
         <div className="dashboard-main">
           <div className="chart-container">
