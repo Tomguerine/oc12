@@ -35,7 +35,7 @@ export default function ActivityChart({ data }) {
       style={{
         background: '#fff',
         fontFamily: 'Roboto, sans-serif',
-        padding: '1rem',
+        padding: '1rem 1rem 1rem 50px',
         maxWidth: '100%',
       }}
     >
