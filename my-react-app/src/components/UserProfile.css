@@ -10,6 +10,8 @@
 
 .dashboard-aside {
   min-width: 200px;
+  padding-right: 4rem;
+  /* Ajuste la valeur selon ton besoin */
 }
 
 /* Dashboard layout refinements */
