@@ -28,17 +28,12 @@ function CustomTooltip({ active, payload }) {
   return null;
 }
 
+import './ActivityChart.css';
+
 export default function ActivityChart({ data }) {
   if (!data) return null;
   return (
-    <div
-      style={{
-        background: '#fff',
-        fontFamily: 'Roboto, sans-serif',
-        padding: '1rem 1rem 1rem 50px',
-        maxWidth: '100%',
-      }}
-    >
+    <div className="activity-chart-container">
       <div
         style={{
           display: 'flex',
@@ -47,7 +42,7 @@ export default function ActivityChart({ data }) {
           marginBottom: '0.5rem',
         }}
       >
-        <h3 style={{ margin: 0 }}>Activité quotidienne</h3>
+        <h3 className="activity-chart-title">Activité quotidienne</h3>
         <div style={{ display: 'flex', gap: '1rem', fontSize: 14 }}>
           <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
             <span
