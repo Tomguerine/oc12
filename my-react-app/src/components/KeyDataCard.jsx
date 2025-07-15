@@ -31,7 +31,6 @@ export const KEY_INFO = {
 };
 
 import React from 'react';
-import './KeyDataCard.css';
 
 /**
  * Composant carte nutritionnelle avec icône et fond coloré.
