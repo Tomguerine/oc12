@@ -1,7 +1,5 @@
 import { ResponsiveContainer, LineChart, Line, XAxis, Tooltip } from 'recharts';
 
-const DAYS = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
-
 export default function AverageSessionsChart({ data }) {
   if (!data) return null;
   return (
@@ -14,7 +12,7 @@ export default function AverageSessionsChart({ data }) {
           dataKey="day"
           tickLine={false}
           axisLine={false}
-          tickFormatter={(day) => DAYS[day - 1]}
+          hide
         />
         <Tooltip />
         <Line
