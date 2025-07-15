@@ -1,16 +1,25 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
-import UserProfile from './components/UserProfile.jsx';
-import Sidebar from './components/Sidebar.jsx';
+import KeyDataCard from './components/KeyDataCard.jsx';
+
 export default function App() {
+  const demoData = [
+    { label: 'Calories', value: 1930, unit: 'kCal', icon: '🔥', bgColor: '#FFE6E6' },
+    { label: 'Protéines', value: 155, unit: 'g', icon: '🍗', bgColor: '#E6F4FF' },
+    { label: 'Glucides', value: 290, unit: 'g', icon: '🍎', bgColor: '#FFF9DB' },
+    { label: 'Lipides', value: 50, unit: 'g', icon: '🍔', bgColor: '#FFEAF4' },
+  ];
+
   return (
-    <div>
-      <Sidebar />
-      <div>
-        <Routes>
-          <Route path="/" element={<Navigate to="/user/12" replace />} />
-          <Route path="/user/:id" element={<UserProfile />} />
-        </Routes>
-      </div>
+    <div className="demo-container">
+      {demoData.map((card) => (
+        <KeyDataCard
+          key={card.label}
+          label={card.label}
+          value={card.value}
+          unit={card.unit}
+          icon={card.icon}
+          bgColor={card.bgColor}
+        />
+      ))}
     </div>
   );
 }
