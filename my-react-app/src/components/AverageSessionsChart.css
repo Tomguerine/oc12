@@ -32,7 +32,15 @@
   height: 350px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 15px;
-  padding: 10px;
+  padding: 20px;
+}
+
+.session-tooltip {
+  background: #ffffff;
+  color: #000;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
 }
 
 @media (max-width: 768px) {
