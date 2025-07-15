@@ -5,6 +5,7 @@ import {
   XAxis,
   Tooltip,
 } from 'recharts';
+import './AverageSessionsChart.css';
 
 const DAY_LETTERS = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 
@@ -18,10 +19,10 @@ function CustomTooltip({ active, payload }) {
   }
   return null;
 }
-import './AverageSessionsChart.css';
 
 export default function AverageSessionsChart({ data }) {
   if (!data) return null;
+
   return (
     <div className="session-container">
       <h2 className="session-title">Durée moyenne des sessions</h2>
@@ -29,28 +30,35 @@ export default function AverageSessionsChart({ data }) {
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
             data={data.sessions}
-            margin={{ top: 40, right: 40, left: 40, bottom: 20 }}
+            margin={{ top: 50, right: 15, left: 15, bottom: 10 }}
           >
             <defs>
-              <linearGradient id="sessionGradient" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stopColor="rgba(255,255,255,0.4)" />
-                <stop offset="100%" stopColor="rgba(255,255,255,1)" />
+              <linearGradient id="sessionGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#ffffff" stopOpacity={0.5} />
+                <stop offset="100%" stopColor="#ffffff" stopOpacity={0.2} />
               </linearGradient>
             </defs>
             <XAxis
               dataKey="day"
-              tickLine={false}
               axisLine={false}
-              tick={{ fill: '#fff', opacity: 0.6, fontSize: 12 }}
+              tickLine={false}
+              tick={{ fill: '#ffffff', opacity: 0.5, fontSize: 12 }}
               tickFormatter={(day) => DAY_LETTERS[day - 1]}
+              padding={{ left: 10, right: 10 }}
             />
-            <Tooltip content={<CustomTooltip />} />
+            <Tooltip content={<CustomTooltip />} cursor={false} />
             <Line
               type="monotone"
               dataKey="sessionLength"
               stroke="url(#sessionGradient)"
               strokeWidth={2}
-              dot={false}
+              dot={false} // ✅ pas de points par défaut
+              activeDot={{
+                stroke: '#fff',
+                strokeWidth: 4,
+                fill: '#fff',
+                r: 5,
+              }}
             />
           </LineChart>
         </ResponsiveContainer>

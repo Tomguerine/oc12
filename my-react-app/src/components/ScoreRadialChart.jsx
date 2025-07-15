@@ -1,31 +1,37 @@
 import { ResponsiveContainer, RadialBarChart, RadialBar } from 'recharts';
+import './ScoreRadialChart.css';
 
-export default function ScoreRadialChart({ value }) {
-  if (value == null) return null;
-  const percent = value * 100;
-  const data = [{ name: 'score', value: percent, fill: '#ff0000' }];
+export default function ScoreRadialChart({ data }) {
+  if (!data) return null;
+
+  const score = data.todayScore ?? data.score;
+  if (score == null) return null;
+
+  const percent = score * 100;
+  const chartData = [{ name: 'score', value: percent, fill: '#ff0000' }];
 
   return (
     <div className="score-chart-container">
+      <h2 className="score-title">Score</h2>
       <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
           innerRadius="80%"
           outerRadius="100%"
-          data={data}
+          data={chartData}
           startAngle={90}
           endAngle={450}
         >
           <RadialBar
             minAngle={15}
-            background
             clockWise
             dataKey="value"
+            background={{ fill: '#fbfbfb' }}
           />
         </RadialBarChart>
       </ResponsiveContainer>
       <div className="score-chart-label">
-        <strong>{percent}%</strong>
-        <p>de votre objectif</p>
+        <span className="score-percent">{percent}%</span>
+        <span className="score-text">de votre objectif</span>
       </div>
     </div>
   );
