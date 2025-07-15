@@ -1,26 +1,32 @@
 // Mapping between nutritional keys and their display information.
 // The icons are simple emojis so the component works without any
 // additional dependencies or assets.
+import './KeyDataCard.css';
+
 export const KEY_INFO = {
   calorieCount: {
     label: 'Calories',
     unit: 'kCal',
     icon: '🔥',
+    bgColor: '#FFE6E6',
   },
   proteinCount: {
     label: 'Protéines',
     unit: 'g',
-    icon: '🥚',
+    icon: '🍗',
+    bgColor: '#E6F4FF',
   },
   carbohydrateCount: {
     label: 'Glucides',
     unit: 'g',
-    icon: '🍞',
+    icon: '🍎',
+    bgColor: '#FFF9DB',
   },
   lipidCount: {
     label: 'Lipides',
     unit: 'g',
-    icon: '🧈',
+    icon: '🍔',
+    bgColor: '#FFEAF4',
   },
 };
 
@@ -33,23 +39,18 @@ export const KEY_INFO = {
  * @param {string} [props.unit] - Unit appended to the value
  * @param {string} [props.icon] - Icon representing the data
  */
-export default function KeyDataCard({ label, value, unit, icon }) {
+export default function KeyDataCard({ label, value, unit, icon, bgColor }) {
   return (
-    <div
-      style={{
-        border: '1px solid #eee',
-        padding: '1rem',
-        margin: '0.5rem',
-        display: 'flex',
-        alignItems: 'center',
-      }}
-    >
-      <span style={{ fontSize: '2rem', marginRight: '1rem' }}>{icon}</span>
+    <div className="key-data-card">
+      <div className="key-data-card-icon" style={{ backgroundColor: bgColor }}>
+        <span>{icon}</span>
+      </div>
       <div>
-        <strong>{value}
+        <div className="key-data-card-value">
+          {value}
           {unit}
-        </strong>
-        <p>{label}</p>
+        </div>
+        <div className="key-data-card-label">{label}</div>
       </div>
     </div>
   );
