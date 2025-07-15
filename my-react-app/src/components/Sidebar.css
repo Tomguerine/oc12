@@ -16,6 +16,12 @@
 .sidebar-link {
   color: #fff;
   margin: 1rem 0;
-  font-size: 1.5rem;
   text-decoration: none;
+}
+
+.sidebar-icon {
+  width: 64px;
+  /* Ajuste selon la taille souhaitée */
+  height: 64px;
+  object-fit: contain;
 }

@@ -24,32 +24,26 @@ export const KEY_INFO = {
   },
 };
 
+import React from 'react';
+import './KeyDataCard.css';
+
 /**
- * Display a user key nutritional data card.
- *
- * @param {object} props
- * @param {string} props.label - Human friendly label
- * @param {number|string} props.value - Value to display
- * @param {string} [props.unit] - Unit appended to the value
- * @param {string} [props.icon] - Icon representing the data
+ * Composant carte nutritionnelle avec icône et fond coloré.
+ * @param {string} label - Libellé (Calories, Protéines, etc.)
+ * @param {string|number} value - Valeur numérique affichée
+ * @param {string} unit - Unité (g, kCal)
+ * @param {string} icon - Emoji à afficher
+ * @param {string} bgColor - Couleur de fond du carré icône
  */
-export default function KeyDataCard({ label, value, unit, icon }) {
+export default function KeyDataCard({ label, value, unit, icon, bgColor }) {
   return (
-    <div
-      style={{
-        border: '1px solid #eee',
-        padding: '1rem',
-        margin: '0.5rem',
-        display: 'flex',
-        alignItems: 'center',
-      }}
-    >
-      <span style={{ fontSize: '2rem', marginRight: '1rem' }}>{icon}</span>
-      <div>
-        <strong>{value}
-          {unit}
-        </strong>
-        <p>{label}</p>
+    <div className="key-data-card">
+      <div className="key-data-card__icon" style={{ backgroundColor: bgColor }}>
+        <span className="key-data-card__emoji">{icon}</span>
+      </div>
+      <div className="key-data-card__content">
+        <p className="key-data-card__value">{value}{unit}</p>
+        <p className="key-data-card__label">{label}</p>
       </div>
     </div>
   );
