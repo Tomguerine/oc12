@@ -44,8 +44,6 @@ export default function UserProfile({ userId: propUserId }) {
     fetchData();
   }, [userId]);
 
-  const score = mainData?.todayScore ?? mainData?.score ?? 0;
-
   if (error) {
     return (
       <div>
@@ -74,9 +72,11 @@ export default function UserProfile({ userId: propUserId }) {
           <div className="chart-container">
             <PerformanceRadarChart data={performance} />
           </div>
-          <div className="chart-container">
-            <ScoreRadialChart value={score} />
-          </div>
+          {mainData && (
+            <div className="chart-container">
+              <ScoreRadialChart data={mainData} />
+            </div>
+          )}
         </div>
         <aside className="dashboard-aside">
           {mainData &&
