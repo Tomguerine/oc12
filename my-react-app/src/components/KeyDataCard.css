@@ -14,10 +14,6 @@
   transform: scale(1.02);
 }
 
-.dashboard-aside {
-  padding-right: 4rem;
-  /* Ajuste la valeur selon ton besoin */
-}
 
 .key-data-card__icon {
   width: 60px;
