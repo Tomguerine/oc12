@@ -1,18 +1,4 @@
-.dashboard-layout {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  column-gap: 2rem;
-}
-
-.dashboard-main {
-  min-width: 300px;
-}
-
-.dashboard-aside {
-  min-width: 200px;
-}
-
-/* Dashboard layout refinements */
+/* Dashboard layout */
 .dashboard-layout {
   display: grid;
   grid-template-columns: 3fr 1fr;
