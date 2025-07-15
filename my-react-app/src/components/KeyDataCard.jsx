@@ -44,24 +44,12 @@ import './KeyDataCard.css';
 export default function KeyDataCard({ label, value, unit, icon, bgColor }) {
   return (
     <div className="key-data-card">
-<<<<<<< HEAD
       <div className="key-data-card__icon" style={{ backgroundColor: bgColor }}>
         <span className="key-data-card__emoji">{icon}</span>
       </div>
       <div className="key-data-card__content">
         <p className="key-data-card__value">{value}{unit}</p>
         <p className="key-data-card__label">{label}</p>
-=======
-      <div className="key-data-card-icon" style={{ backgroundColor: bgColor }}>
-        <span>{icon}</span>
-      </div>
-      <div>
-        <div className="key-data-card-value">
-          {value}
-          {unit}
-        </div>
-        <div className="key-data-card-label">{label}</div>
->>>>>>> 9eaeadd35b6767896a9c07538ba783c8aff27289
       </div>
     </div>
   );
