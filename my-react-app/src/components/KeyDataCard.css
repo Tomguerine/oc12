@@ -4,16 +4,15 @@
   background-color: #fbfbfb;
   border-radius: 5px;
   padding: 1.5rem;
-  padding-right: 50px;
   margin-bottom: 1.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.03);
   transition: transform 0.2s;
+  width: 258px;
 }
 
 .key-data-card:hover {
   transform: scale(1.02);
 }
-
 
 .key-data-card__icon {
   width: 60px;
@@ -23,10 +22,11 @@
   justify-content: center;
   align-items: center;
   margin-right: 1.5rem;
+  background-color: var(--bg-color);
 }
 
 .key-data-card__emoji {
-  font-size: 28px;
+  font-size: 24px;
 }
 
 .key-data-card__content {

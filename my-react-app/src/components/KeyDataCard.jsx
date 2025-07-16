@@ -2,7 +2,6 @@
 // The icons are simple emojis so the component works without any
 // additional dependencies or assets.
 import './KeyDataCard.css';
-
 export const KEY_INFO = {
   calorieCount: {
     label: 'Calories',
@@ -43,7 +42,10 @@ import React from 'react';
 export default function KeyDataCard({ label, value, unit, icon, bgColor }) {
   return (
     <div className="key-data-card">
-      <div className="key-data-card__icon" style={{ backgroundColor: bgColor }}>
+      <div
+        className="key-data-card__icon"
+        style={{ backgroundColor: bgColor }}
+      >
         <span className="key-data-card__emoji">{icon}</span>
       </div>
       <div className="key-data-card__content">

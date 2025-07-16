@@ -92,6 +92,7 @@ export default function UserProfile({ userId: propUserId }) {
                     value={value}
                     unit={info.unit}
                     icon={info.icon}
+                    bgColor={info.bgColor}
                   />
                 );
               }

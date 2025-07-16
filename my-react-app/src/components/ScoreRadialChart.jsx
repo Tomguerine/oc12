@@ -8,7 +8,11 @@ export default function ScoreRadialChart({ data }) {
   if (score == null) return null;
 
   const percent = score * 100;
-  const chartData = [{ name: 'score', value: percent, fill: '#ff0000' }];
+
+  const chartData = [
+    { name: 'score', value: percent, fill: '#ff0000' },
+    { name: 'rest', value: 100 - percent, fill: '#fbfbfb' },
+  ];
 
   return (
     <div className="score-chart-container">
@@ -22,10 +26,9 @@ export default function ScoreRadialChart({ data }) {
           endAngle={450}
         >
           <RadialBar
-            minAngle={15}
             clockWise
             dataKey="value"
-            background={{ fill: '#fbfbfb' }}
+            cornerRadius={50}
           />
         </RadialBarChart>
       </ResponsiveContainer>
